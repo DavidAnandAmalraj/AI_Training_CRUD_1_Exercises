@@ -1,0 +1,368 @@
+/* ── Reset & Base ───────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* ── Layout ─────────────────────────────────────────────────────────────────── */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background: #1a73e8;
+  color: #fff;
+  padding: 0 24px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.app-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.app-main {
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 0 16px;
+  width: 100%;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.section-header h2 {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #1a73e8;
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #1558b0;
+}
+
+.btn-secondary {
+  background: #e8eaed;
+  color: #444;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #d2d5da;
+}
+
+.btn-danger {
+  background: #d93025;
+  color: #fff;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: #b31b16;
+}
+
+.btn-sm {
+  padding: 4px 12px;
+  font-size: 0.8rem;
+}
+
+/* ── Alerts ──────────────────────────────────────────────────────────────────── */
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.alert-error {
+  background: #fce8e6;
+  color: #c5221f;
+  border: 1px solid #f5c6c4;
+}
+
+.alert-success {
+  background: #e6f4ea;
+  color: #1e7e34;
+  border: 1px solid #b7dfbf;
+}
+
+.alert-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: inherit;
+  line-height: 1;
+}
+
+/* ── Table ───────────────────────────────────────────────────────────────────── */
+.table-wrapper {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.customer-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.customer-table th,
+.customer-table td {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.customer-table th {
+  background: #f8f9fa;
+  color: #666;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #e8eaed;
+}
+
+.customer-table tbody tr {
+  border-bottom: 1px solid #e8eaed;
+  transition: background 0.1s;
+}
+
+.customer-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.customer-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.action-cell {
+  display: flex;
+  gap: 8px;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: #1a73e8;
+  cursor: pointer;
+  font-size: 0.875rem;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.link-btn:hover {
+  color: #1558b0;
+}
+
+.empty-state {
+  background: #fff;
+  border-radius: 8px;
+  padding: 40px;
+  text-align: center;
+  color: #888;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.loading {
+  text-align: center;
+  color: #888;
+  padding: 40px;
+}
+
+/* ── Form ────────────────────────────────────────────────────────────────────── */
+.form-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.col-3 { width: calc(25% - 12px); }
+.col-6 { width: calc(50% - 8px); }
+.col-12 { width: 100%; }
+
+@media (max-width: 600px) {
+  .col-3,
+  .col-6 {
+    width: 100%;
+  }
+}
+
+label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #555;
+}
+
+input {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: border-color 0.15s;
+  outline: none;
+}
+
+input:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.15);
+}
+
+input.input-error {
+  border-color: #d93025;
+}
+
+.error-msg {
+  font-size: 0.75rem;
+  color: #d93025;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 8px;
+  width: 100%;
+}
+
+/* ── Detail card ─────────────────────────────────────────────────────────────── */
+.detail-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 32px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  max-width: 640px;
+}
+
+.detail-card h2 {
+  margin-bottom: 24px;
+  font-size: 1.4rem;
+  color: #222;
+}
+
+.detail-list {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  row-gap: 12px;
+  column-gap: 16px;
+  margin-bottom: 28px;
+}
+
+.detail-list dt {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding-top: 2px;
+}
+
+.detail-list dd {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* ── Modal ───────────────────────────────────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 10px;
+  padding: 28px 32px;
+  min-width: 320px;
+  max-width: 460px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.modal-message {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
